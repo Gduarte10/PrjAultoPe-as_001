@@ -8,11 +8,26 @@ public class Peca {
 
 
     public int aumentaEstoque(int quantidade){
-        int quantidadeAnterior = quantidadeEstoque; 
+        return alterarEstoque(quantidade);
+    }
+
+    public int diminuirEstoque(int quantidade) {
+        return alterarEstoque(- quantidade);
+    }
+
+    public double calcularValorEstoque () {
+        return quantidadeEstoque * precoUnitario;
+    }
+
+    private int alterarEstoque(int quantidade) {
+         int quantidadeAnterior = quantidadeEstoque; 
         quantidadeEstoque = quantidadeEstoque + quantidade;
         return quantidadeAnterior;
     }
 
+
+
+ 
 
    
 

@@ -4,7 +4,8 @@ public class App {
     public static void main(String[] args) throws Exception {
         Peca peca = new Peca();
         peca.quantidadeEstoque = 0;
-
+        
+        // aceita via teclado as informaçãos para cadastra um apeça
         Scanner teclado = new Scanner(System.in);
         System.out.println("Digite o código da peça:");
         peca.codigo = teclado.nextInt();
@@ -26,12 +27,15 @@ public class App {
         System.out.println("Quantidade em estoqu:" + peca.quantidadeEstoque);
         System.out.println("Digitar a quantidade a ser adicionada ao estoque:");
         int quantidadeAdicionada = teclado.nextInt();
-        System.out.println("Quandidade anterior: " + peca.alterarEstoque(quantidadeAdicionada));
+        System.out.println("Quandidade anterior: " + peca.aumentaEstoque(quantidadeAdicionada));
         System.out.println("Quantidade atual: " + peca.quantidadeEstoque);
         System.out.println("Digitar a quantidade a ser retirada do estoque:");
         int quantidadeRetirada = teclado.nextInt();
-        System.out.println("Quantidade anterior: " + peca.alterarEstoque(quantidadeRetirada));
+        System.out.println("Quantidade anterior: " + peca.diminuirEstoque(quantidadeRetirada));
         System.out.println("Quantidade atual: " + peca.quantidadeEstoque);
+
+        // calcular o valor da peça
+        System.out.println("Valor do estoque" + peca.calcularValorEstoque());
 
 
         teclado.close();
